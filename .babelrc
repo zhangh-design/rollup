@@ -1,0 +1,35 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        // 用来设置浏览器 polyfill，按需加载在每个文件中使用polyfill时，添加特定的导入（无需引入 polyfill，babel 会自动按需加载需要的功能）
+        "useBuiltIns": "usage",
+        // 这个 corejs 一定要配置，Babel在7.4.0以后需要安装corejs这个核心库
+        "corejs": {
+          "version": "3.9.1"
+        },
+        "modules": false, // 模块使用 es modules ，不使用 commonJS 规范
+        // 目标浏览器或者对应的环境（browser/node）
+        "targets": {
+          // "chrome": "80"
+          // "ie": "10"
+          "browsers": ["> 10%", "last 2 versions", "not ie <= 8"]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    // 解决多个地方使用相同代码导致打包重复的问题
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": false, // 默认值，可以不写
+        "helpers": true, // 默认，可以不写
+        "regenerator": false, // 通过 preset-env 已经使用了全局的 regeneratorRuntime, 不再需要 transform-runtime 提供的 不污染全局的 regeneratorRuntime
+        "useESModules": true // 使用 es modules helpers, 减少 commonJS 语法代码
+      }
+    ]
+  ],
+  "ignore": ["node_modules/**"]
+}
