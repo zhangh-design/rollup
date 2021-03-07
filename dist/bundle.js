@@ -1,3 +1,4 @@
+/* experience v1.0.0 | (c) 2021 by zh */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
@@ -2546,7 +2547,7 @@
 	    }, 3000);
 	  });
 	  p1.then(function (result) {
-	    return console.log(result);
+	    return console.warn(result);
 	  });
 	  console.log("version " + version$1 + hello);
 	}
@@ -2554,4 +2555,5 @@
 	return index;
 
 })));
+/* follow me on Twitter! @rich_harris */
 //# sourceMappingURL=bundle.js.map

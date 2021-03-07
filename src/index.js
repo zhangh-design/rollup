@@ -15,6 +15,6 @@ export default function () {
       resolve("hello-promise");
     }, 3000);
   });
-  p1.then((result) => console.log(result));
+  p1.then((result) => console.warn(result));
   console.log("version " + version + hello);
 }
