@@ -17,7 +17,7 @@ export default {
   input: ['./src/index.js'], // 包的入口点
   output: [
     {
-      name: 'experience',
+      name: 'experience', // 开发版-不使用`terser`插件进行压缩，插件的对外全局变量（在index.html页面中引入打包的js文件后可以通过这个变量去调用内部的方法）
       banner: '/* experience v' + version + ' | (c) 2021 by zh */', // banner、footer 字符串以 前置/追加 到文件束(bundle)
       footer: '/* follow me on Twitter! @rich_harris */',
       file: './dist/bundle.js',
@@ -36,7 +36,7 @@ export default {
     {
       banner: '/* experience v' + version + ' | (c) 2021 by zh */',
       footer: '/* follow me on Twitter! @rich_harris */',
-      name: 'experience',
+      name: 'experience', // 生产版
       file: './dist/bundle.min.js',
       format: 'umd',
       plugins: [
