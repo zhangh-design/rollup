@@ -12,7 +12,7 @@
   "editor.detectIndentation": false,
   // 重新设定tabsize
   "editor.tabSize": 2,
-  "editor.fontSize": 18,
+  "editor.fontSize": 16,
   "eslint.validate": [
     "javascript",
     "javascriptreact",

@@ -2,6 +2,7 @@
 export default function () {
   console.log(foo);
 } */
+// eslint-disable-next-line import/no-relative-parent-imports
 import { version } from '../package.json';
 
 export default function() {
