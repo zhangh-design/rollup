@@ -67,7 +67,7 @@ module.exports = {
     'import/no-namespace': 2,
     'import/extensions': [
       'error',
-      { js: 'always', json: 'always', vue: 'always', jsx: 'always' }
+      { js: 'always', json: 'always', vue: 'never', jsx: 'always' }
     ],
     'import/first': 2,
     // eslint-plugin-standard
