@@ -13,7 +13,7 @@
         // 目标浏览器或者对应的环境（browser/node）
         "targets": {
           // "chrome": "80"
-          // "ie": "10"
+          // "ie": "11"
           "browsers": ["> 10%", "last 2 versions", "not ie <= 8"]
         }
       }
@@ -30,6 +30,7 @@
         "useESModules": true // 使用 es modules helpers, 减少 commonJS 语法代码
       }
     ]
+    // "external-helpers"
   ],
   "ignore": ["node_modules/**"]
 }

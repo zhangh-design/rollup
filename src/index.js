@@ -4,17 +4,23 @@ export default function () {
 } */
 import { version } from '../package.json';
 
-export default function () {
+export default function() {
+  // eslint-disable-next-line no-unused-vars
+  const b = '';
   const hello = 'hello world';
   const aFruitList = ['apple', 'banana', 'pear', 'pineapple'];
-  for (let [index, elem] of aFruitList.entries()) {
+  for (const [index, elem] of aFruitList.entries()) {
     console.log(index, elem);
   }
-  const p1 = new Promise(function (resolve, reject) {
+  const P1 = new Promise(function(resolve, reject) {
     setTimeout(() => {
       resolve('hello-promise');
     }, 3000);
   });
-  p1.then((result) => console.warn(result));
+  P1.then(result => {
+    return console.log(result);
+  }).catch(error => {
+    throw new Error(error);
+  });
   console.log('version ' + version + hello);
 }
