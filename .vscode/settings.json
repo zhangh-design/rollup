@@ -1,0 +1,87 @@
+{
+  "eslint.codeAction.disableRuleComment": {},
+  "eslint.enable": true,
+  // 保存文件时自动修复一些eslint的语法例如：多写了一个空格
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // vscode默认启用了根据文件类型自动设置tabsize的选项
+  "editor.detectIndentation": false,
+  // 重新设定tabsize
+  "editor.tabSize": 2,
+  "editor.fontSize": 18,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.codeAction.showDocumentation": {},
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.confirmSync": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 0,
+  "cSpell.userWords": [
+    "Popconfirm",
+    "Vuex",
+    "browserslistrc",
+    "chunkhash",
+    "cnpm",
+    "devtool",
+    "echarts",
+    "inited",
+    "nprogress",
+    "prefetch",
+    "pxtorem",
+    "unicom",
+    "vant"
+  ],
+  "javascript.updateImportsOnFileMove.enabled": "always", // import路径移动或者重命名时，自动更新:
+  "diffEditor.ignoreTrimWhitespace": false, // 为了得到diff来显示空白，类似于git diff
+  "explorer.autoReveal": false, //  设置取消打开文件目录的自动定位跟踪功能
+  "workbench.sideBar.location": "left", // 边栏位置调整到左侧
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "todohighlight.exclude": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.vscode/**",
+    "**/.github/**",
+    "**/_output/**",
+    "**/*.min.*",
+    "**/*.map",
+    "**/.next/**"
+  ],
+  // 防止编辑器内置linter与插件冲突设置
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false
+  /* "editor.rulers": [
+    80,120
+  ] */
+}
