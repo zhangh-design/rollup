@@ -49,7 +49,7 @@ module.exports = {
     'import/no-self-import': 2,
     'import/export': 2,
     'import/no-webpack-loader-syntax': 2,
-    'import/no-relative-parent-imports': 2,
+    // 'import/no-relative-parent-imports': 2,
     'import/no-useless-path-segments': 2,
     'import/no-cycle': [2, { maxDepth: 1 }],
     'import/no-dynamic-require': 2,
@@ -65,10 +65,10 @@ module.exports = {
     'import/order': 2,
     'import/group-exports': 2,
     'import/no-namespace': 2,
-    'import/extensions': [
+    /* 'import/extensions': [
       'error',
       { js: 'always', json: 'always', vue: 'never', jsx: 'always' }
-    ],
+    ], */
     'import/first': 2,
     // eslint-plugin-standard
     'standard/no-callback-literal': [2, ['cb', 'callback']]

@@ -12,15 +12,15 @@ import alias from 'rollup-plugin-alias'; // 将模块中’@'别名替换为’s
 import eslint from '@rollup/plugin-eslint'; //  [eslint js代码检测](https://github.com/rollup/plugins/tree/master/packages/eslint)
 import path from 'path';
 
-const pathResolve = (p) => path.resolve(__dirname, p);
+const pathResolve = p => path.resolve(__dirname, p);
 
 export default {
   input: ['./src/index.js'], // 包的入口点
-  external: [], // 指出应将哪些模块视为外部模块 external: ['lodash']
-  globals: {}, // 全局模块 globals: {jquery: '$'}
+  external: ['axios'], // 指出应将哪些模块视为外部模块 external: ['lodash']，需要使用 CDN 外部载入
+  globals: { axios: 'axios' }, // 全局模块 globals: {jquery: '$'}
   output: [
     {
-      name: 'experience', // 开发版-不使用`terser`插件进行压缩，插件的对外全局变量（在index.html页面中引入打包的js文件后可以通过这个变量去调用内部的方法）
+      name: 'TrackingMd', // 开发版-不使用`terser`插件进行压缩，插件的对外全局变量（在index.html页面中引入打包的js文件后可以通过这个变量去调用内部的方法）
       banner: '/* experience v' + version + ' | (c) 2021 by zh */', // banner、footer 字符串以 前置/追加 到文件束(bundle)
       footer: '/* follow me on gitee! @zhangh-design */',
       file: './dist/bundle.js',
@@ -30,8 +30,8 @@ export default {
     {
       banner: '/* experience v' + version + ' | (c) 2021 by zh */',
       footer: '/* follow me on gitee! @zhangh-design */',
-      name: 'experience', // 生产版
-      file: './dist/bundle.min.js',
+      name: 'TrackingMd', // 生产版
+      file: `./dist/bundle${version}.min.js`,
       format: 'umd',
       plugins: [
         terser({
@@ -50,7 +50,7 @@ export default {
       '@': pathResolve('src')
     }),
     commonjs(), // [应该用在其他插件转换你的模块之前，不使用的话打包出的代码中会有 require(...) 这种 commonjs 的语法导入代码](https://www.rollupjs.com/guide/tools#rollup-plugin-commonjs)
-    eslint({fix: false}),
+    eslint({ fix: false }),
     babel({
       babelHelpers: 'runtime', // [使plugin-transform-runtime生效](https://github.com/rollup/plugins/tree/master/packages/babel#babelhelpers)
       exclude: 'node_modules/**' // 防止打包node_modules下的文件
