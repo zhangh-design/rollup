@@ -41,7 +41,12 @@ module.exports = {
     'promise/no-return-in-finally': 'warn',
     'promise/valid-params': 'warn',
     // eslint-plugin-import
-    'import/no-unresolved': 2,
+    'import/no-unresolved': [
+      'error',
+      {
+        ignore: ['@']
+      }
+    ],
     'import/named': 2,
     'import/default': 2,
     'import/namespace': 2,
@@ -51,14 +56,14 @@ module.exports = {
     'import/no-webpack-loader-syntax': 2,
     // 'import/no-relative-parent-imports': 2,
     'import/no-useless-path-segments': 2,
-    'import/no-cycle': [2, { maxDepth: 1 }],
+    // 'import/no-cycle': [2, { maxDepth: 1 }],
     'import/no-dynamic-require': 2,
     'import/no-relative-packages': 0,
     'import/no-restricted-paths': 0,
     'import/no-named-as-default-member': 2,
     'import/no-deprecated': 1,
     'import/no-unused-modules': [
-      1,
+      0,
       { unusedExports: true, ignoreExports: ['./src/index.js'] }
     ], // 排除 src/index.js 不进行这个校验，因为这是入口文件
     'import/newline-after-import': 2,
