@@ -35,7 +35,7 @@ module.exports = {
     'promise/no-native': 'off',
     'promise/no-nesting': 'warn',
     'promise/no-promise-in-callback': 'warn',
-    'promise/no-callback-in-promise': 'warn',
+    'promise/no-callback-in-promise': 'off',
     'promise/avoid-new': 'off',
     'promise/no-new-statics': 'error',
     'promise/no-return-in-finally': 'warn',
