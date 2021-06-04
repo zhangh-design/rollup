@@ -2,5 +2,7 @@ dist
 node_modules
 example
 rollup.config.js
+rollup.config-me.js
 .prettierrc.js
 package.json
+rollup-plugin-vue

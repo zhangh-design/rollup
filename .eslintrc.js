@@ -5,13 +5,13 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: ['standard', 'prettier'],
-  plugins: ['prettier', 'promise', 'import', 'standard'],
+  extends: ['plugin:vue/essential', 'standard', '@vue/prettier'],
+  plugins: ['prettier', 'promise', 'import', 'vue'],
   parserOptions: {
     parser: 'babel-eslint'
   },
   rules: {
-    'prettier/prettier': 'error', // 被prettier标记的地方抛出错误信息，vue CLI 默认是 warn
+    'prettier/prettier': 'off', // 被prettier标记的地方抛出错误信息，vue CLI 默认是 warn
     'no-console': 'off',
     semi: ['error', 'always'],
     /* 'space-before-function-paren': [
@@ -74,9 +74,7 @@ module.exports = {
       'error',
       { js: 'always', json: 'always', vue: 'never', jsx: 'always' }
     ], */
-    'import/first': 2,
-    // eslint-plugin-standard
-    'standard/no-callback-literal': [2, ['cb', 'callback']]
+    'import/first': 2
   },
   globals: {
     $: true,
